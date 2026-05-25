@@ -16,7 +16,7 @@ const youtubeRule = {
     ]
   },
   condition: {
-    regexFilter: '^https?://([a-zA-Z0-9-]+\\.)?youtube\\.com/',
+    regexFilter: '^https://([a-zA-Z0-9-]+\\.)?youtube\\.com/',
     resourceTypes: [
       'main_frame',
       'sub_frame',

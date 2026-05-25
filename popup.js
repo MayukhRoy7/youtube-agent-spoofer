@@ -22,7 +22,13 @@ toggle.addEventListener('change', async () => {
   renderStatus(enabled);
 
   await new Promise((resolve) => {
-    chrome.runtime.sendMessage({ type: 'setEnabled', enabled }, () => resolve());
+    chrome.runtime.sendMessage({ type: 'setEnabled', enabled }, () => {
+      if (chrome.runtime.lastError) {
+        renderStatus(!enabled);
+        toggle.checked = !enabled;
+      }
+      resolve();
+    });
   });
 });
 

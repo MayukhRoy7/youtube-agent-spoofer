@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Safari User-Agent Spoofer",
+  "description": "Applies a Safari user-agent on youtube.com with a persistent on/off toggle.",
+  "version": "1.0.0",
+  "permissions": [
+    "declarativeNetRequest",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://youtube.com/*",
+    "https://*.youtube.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "YouTube UA Spoofer",
+    "default_popup": "popup.html"
+  }
+}
